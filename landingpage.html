@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Syukur Mengenang Beny Gunawan & WisudaLea N.A Gunawan, S.Farm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-hidden"> 
+    
+    <div id="gate" class="gate-bg min-h-screen flex flex-col justify-center items-center p-4 relative z-20">
+        
+        <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+        
+        <div class="text-center p-8 backdrop-blur-sm bg-black bg-opacity-40 rounded-xl shadow-2xl max-w-sm sm:max-w-md w-full relative z-20">
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white font-['Playfair_Display']">
+                Kami Sekeluarga Mengundang
+            </h1>
+            <p class="text-lg text-gray-200 mb-8 font-['Lato']">
+                Bapak/Ibu untuk hadir dalam acara Doa Syukur.
+            </p>
+
+            <button id="openInvitationButton" 
+                    class="mt-4 px-6 py-3 bg-gray-700 text-white font-bold text-lg rounded-full shadow-xl hover:bg-gray-800 transition duration-300 transform hover:scale-105 uppercase tracking-wider">
+                Buka Undangan
+            </button>
+            
+            <p class="mt-4 text-sm text-gray-200 italic">Sentuh layar untuk melihat detail.</p>
+        </div>
+    </div>
+
+    <div id="mainContent" class="h-screen w-screen overflow-y-scroll snap-y snap-mandatory relative transition-opacity duration-700 opacity-0 pointer-events-none"> 
+        
+        <section id="section-in-memoriam" class="page-section in-memoriam-bg text-center flex items-center justify-center snap-start relative">
+            
+            <div class="in-memoriam-ornament-top-left"></div>
+            <div class="in-memoriam-ornament-top-right"></div>
+            <div class="in-memoriam-ornament-bottom-left"></div>
+            <div class="in-memoriam-ornament-bottom-right"></div>
+            
+            <div class="relative z-10 p-8 sm:p-10 max-w-xl mx-auto text-center transition-opacity duration-700 opacity-0 section-content">
+                <p class="text-xl text-gray-700 mb-4 font-['Lato']">IN LOVING MEMORY</p>
+                <div class="mb-6">
+                </div>
+                
+                <div class="relative w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-gray-300 shadow-lg">
+                    <img src="pict/almbeni.png" alt="Almarhum Beny Gunawan" class="w-full h-full object-cover">
+                    
+                    <img src="https://i.ibb.co/L5hYwz1/flower-arrangement.png" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-auto">
+                </div>
+                
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4 font-['Playfair_Display']">Beny Gunawan</h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-sm mx-auto mb-6 font-['Lato']">
+                    Mengenang setahun penuh kenangan, tawa, dan kasih sayang yang telah diberikan oleh Beny Gunawan. Mari bersama-sama kita panjatkan syukur dan doa dalam acara Peringatan 1 Tahun Kepergiannya, memohon agar ia beristirahat dalam damai-Nya.
+                </p>
+            </div>
+        </section>
+
+        <section id="section-intro" class="page-section text-center flex items-center justify-center snap-start relative">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('pict/lea.png');"></div>
+        </section>
+
+<section id="section-save-date" class="page-section section-save-date flex items-center justify-center snap-start relative">
+    <div class="relative z-10 p-8 sm:p-10 max-w-3xl mx-auto text-center transition-opacity duration-700 opacity-0 section-content">
+        
+        <h2 class="text-4xl font-bold text-gray-800 mb-10 font-['Playfair_Display'] border-b pb-3 border-gray-400">Save The Date</h2>
+        
+        <div id="countdown" class="grid grid-cols-4 gap-4 mb-10">
+            <div class="p-4 rounded-xl">
+                <div id="days" class="text-4xl font-extrabold text-gray-800">00</div>
+                <div class="text-sm text-gray-600 mt-1">Hari</div>
+            </div>
+            <div class="p-4 rounded-xl">
+                <div id="hours" class="text-4xl font-extrabold text-gray-800">00</div>
+                <div class="text-sm text-gray-600 mt-1">Jam</div>
+            </div>
+            <div class="p-4 rounded-xl">
+                <div id="minutes" class="text-4xl font-extrabold text-gray-800">00</div>
+                <div class="text-sm text-gray-600 mt-1">Menit</div>
+            </div>
+            <div class="p-4 rounded-xl">
+                <div id="seconds" class="text-4xl font-extrabold text-gray-800">00</div>
+                <div class="text-sm text-gray-600 mt-1">Detik</div>
+            </div>
+        </div>
+
+        <div class="mt-10 p-6 bg-gray-50 rounded-xl shadow-md">
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Lokasi & Waktu Acara</h3>
+            
+            <p class="text-gray-700 mb-1">🏡Tempat:Kel. Gunawan - Liu </p>
+            <p class="text-gray-600 mb-1">📍Alamat:Perum Griya Warembungan Lestari Blok H9</p>
+            <p class="text-gray-700 mt-3 mb-4">⏰ Waktu:Minggu, 30 November 2025, Pukul 12.00 WITA</p>
+    </div>
+</section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

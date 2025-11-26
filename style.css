@@ -1,0 +1,142 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+/* --- CUSTOM STYLES --- */
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Halaman Gate dengan Background Image */
+.gate-bg {
+    background-image: url('pict/bg2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; 
+}
+
+/* Scroll Container untuk Efek Slide */
+#mainContent {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Setiap Section (Slide) */
+.page-section {
+    height: 100vh; 
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+    padding: 20px 10px; 
+    box-sizing: border-box;
+}
+
+#openInvitationButton {
+    transition: all 0.3s ease;
+}
+
+
+#countdown div {
+    border: none;
+}
+
+.in-memoriam-bg {
+    background-color: #f8f8f8;
+    background-image: 
+        url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23e8e8e8" fill-opacity="0.4"%3E%3Cpath d="M25 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm50 0a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM25 75a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm50 0a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM50 46a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM50 25a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM50 68a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM50 89a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM18 50a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM75 50a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM89 50a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM32 50a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM68 50a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM50 32a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM50 68a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: repeat;
+    background-size: 100px;
+}
+
+/* Ornamen Sudut */
+.in-memoriam-ornament-top-left, 
+.in-memoriam-ornament-top-right, 
+.in-memoriam-ornament-bottom-left, 
+.in-memoriam-ornament-bottom-right {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-image: url('data:image/svg+xml,%3Csvg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0C0 0 10 50 120 10V0H0Z" fill="%23d0d0d0"%3E%3C/path%3E%3Cpath d="M0 0C0 0 50 10 10 120V0H0Z" fill="%23d0d0d0"%3E%3C/path%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    display: none;
+}
+
+.in-memoriam-ornament-top-left {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+}
+
+.in-memoriam-ornament-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.in-memoriam-ornament-bottom-left {
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(-180deg);
+}
+
+.in-memoriam-ornament-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-270deg);
+}
+
+/* Tampilkan ornamen hanya pada layar tablet ke atas */
+@media (min-width: 640px) { 
+    .in-memoriam-ornament-top-left, 
+    .in-memoriam-ornament-top-right, 
+    .in-memoriam-ornament-bottom-left, 
+    .in-memoriam-ornament-bottom-right {
+        display: block;
+    }
+}
+
+.section-save-date {
+    background-image: url('pict/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: scroll; 
+}
+
+/* Overlay putih semi-transparan agar teks jelas */
+.section-save-date::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(73, 72, 72, 0.7); 
+    z-index: 5; 
+}
+
+/* Pastikan konten (z-10) di atas overlay (z-5) */
+.section-save-date .relative.z-10 {
+    z-index: 10;
+}
+
+.section-save-date h2 {
+    color: white !important;
+    border-bottom-color: white !important;
+}
+
+/* Mengubah angka Hari, Jam, Menit, Detik menjadi PUTIH */
+#countdown #days,
+#countdown #hours,
+#countdown #minutes,
+#countdown #seconds {
+    color: #ffffff !important; 
+}
+
+/* Mengubah label Hari, Jam, Menit, Detik menjadi PUTIH */
+#countdown div .text-sm {
+    color: #ffffff !important; 
+}
