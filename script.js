@@ -1,28 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const bgMusic = document.getElementById("bg-music");
-    bgMusic.volume = 0.7;
-
-    let musicStarted = false;
-
-    function startMusic() {
-        if (!musicStarted) {
-            bgMusic.play().catch(() => {});
-            musicStarted = true;
-        }
-    }
-
-    document.addEventListener("scroll", startMusic);
-    document.addEventListener("touchstart", startMusic);
-    document.addEventListener("click", startMusic);
-
     const gate = document.getElementById('gate');
     const mainContent = document.getElementById('mainContent');
     const openButton = document.getElementById('openInvitationButton');
     const sections = document.querySelectorAll('.page-section');
-    const firstSection = document.getElementById('section-in-memoriam'); 
+    const firstSection = document.getElementById('section-in-memoriam');
 
-    const targetDate = new Date("Nov 30, 2025 12:00:00").getTime(); 
+    const targetDate = new Date("Nov 30, 2025 12:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -35,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formatNumber = (num) => String(num).padStart(2, '0');
 
-        if (document.getElementById("days")) { 
+        if (document.getElementById("days")) {
             document.getElementById("days").innerHTML = formatNumber(days);
             document.getElementById("hours").innerHTML = formatNumber(hours);
             document.getElementById("minutes").innerHTML = formatNumber(minutes);
@@ -52,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); 
+    updateCountdown();
 
     function openInvitation() {
         openButton.disabled = true;
@@ -63,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.classList.add('opacity-100');
 
         setTimeout(() => {
-            gate.style.height = '0'; 
-            gate.style.overflow = 'hidden'; 
+            gate.style.height = '0';
+            gate.style.overflow = 'hidden';
             firstSection.scrollIntoView({ behavior: 'smooth' });
             sections.forEach(section => observer.observe(section));
         }, 700);
@@ -85,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, {
         threshold: 0.5,
-        root: mainContent 
+        root: mainContent
     });
 
     openButton.addEventListener('click', openInvitation);
