@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ----------------------------------------
-       🎵 AUTOPLAY MUSIC (tanpa tombol)
-    ---------------------------------------- */
     const bgMusic = document.getElementById("bg-music");
     bgMusic.volume = 0.7;
 
@@ -15,22 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Musik mulai saat user scroll / tap / klik sedikit
     document.addEventListener("scroll", startMusic);
     document.addEventListener("touchstart", startMusic);
     document.addEventListener("click", startMusic);
-
-
-
-    /* ----------------------------------------
-       SCRIPT ASLI KAMU MULAI DARI SINI
-    ---------------------------------------- */
 
     const gate = document.getElementById('gate');
     const mainContent = document.getElementById('mainContent');
     const openButton = document.getElementById('openInvitationButton');
     const sections = document.querySelectorAll('.page-section');
-
     const firstSection = document.getElementById('section-in-memoriam'); 
 
     const targetDate = new Date("Nov 30, 2025 12:00:00").getTime(); 
@@ -67,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openInvitation() {
         openButton.disabled = true;
-
         gate.style.transition = 'opacity 0.7s ease-out';
         gate.style.opacity = '0';
 
