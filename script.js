@@ -1,16 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    /* ----------------------------------------
+       🎵 AUTOPLAY MUSIC (tanpa tombol)
+    ---------------------------------------- */
+    const bgMusic = document.getElementById("bg-music");
+    bgMusic.volume = 0.7;
+
+    let musicStarted = false;
+
+    function startMusic() {
+        if (!musicStarted) {
+            bgMusic.play().catch(() => {});
+            musicStarted = true;
+        }
+    }
+
+    // Musik mulai saat user scroll / tap / klik sedikit
+    document.addEventListener("scroll", startMusic);
+    document.addEventListener("touchstart", startMusic);
+    document.addEventListener("click", startMusic);
+
+
+
+    /* ----------------------------------------
+       SCRIPT ASLI KAMU MULAI DARI SINI
+    ---------------------------------------- */
+
     const gate = document.getElementById('gate');
     const mainContent = document.getElementById('mainContent');
     const openButton = document.getElementById('openInvitationButton');
     const sections = document.querySelectorAll('.page-section');
-    
-    // PENTING: firstSection menunjuk ke halaman 'Mengenang' yang baru
+
     const firstSection = document.getElementById('section-in-memoriam'); 
 
-    // Target tanggal acara: Sabtu, 14 Desember 2025, Pukul 19.00 WIB
     const targetDate = new Date("Nov 30, 2025 12:00:00").getTime(); 
 
-    // 1. Fungsi Countdown Real-Time
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = targetDate - now;
@@ -41,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownInterval = setInterval(updateCountdown, 1000);
     updateCountdown(); 
 
-    // 2. Fungsi Transisi Pembuka (Open Invitation)
     function openInvitation() {
         openButton.disabled = true;
 
@@ -54,17 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             gate.style.height = '0'; 
             gate.style.overflow = 'hidden'; 
-            
-            // Scroll ke halaman pertama (Mengenang)
             firstSection.scrollIntoView({ behavior: 'smooth' });
-            
-            // Mulai observasi untuk animasi fade-in
             sections.forEach(section => observer.observe(section));
-
         }, 700);
     }
-    
-    // 3. Observer untuk Animasi Fade-in per Slide (konten muncul saat slide terlihat)
+
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             const content = entry.target.querySelector('.section-content');
@@ -79,14 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.5, // Konten muncul ketika 50% slide terlihat
+        threshold: 0.5,
         root: mainContent 
     });
 
-    // 4. Event Listener Tombol
     openButton.addEventListener('click', openInvitation);
     openButton.addEventListener('touchstart', (e) => {
         e.preventDefault();
         openInvitation();
     });
+
 });
